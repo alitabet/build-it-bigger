@@ -5,4 +5,4 @@ dependencies {
     compile 'org.json:json:20151123'
 }
 
-sourceCompatibility = 1.7
+sourceCompatibility = JavaVersion.VERSION_1_7
