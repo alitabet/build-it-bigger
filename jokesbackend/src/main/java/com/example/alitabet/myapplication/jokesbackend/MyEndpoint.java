@@ -6,6 +6,7 @@
 
 package com.example.alitabet.myapplication.jokesbackend;
 
+import com.example.JokeFactory;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -37,4 +38,12 @@ public class MyEndpoint {
         return response;
     }
 
+    @ApiMethod(name = "getJoke")
+    public MyBean getJoke() {
+        MyBean response = new MyBean();
+        JokeFactory jokes = new JokeFactory();
+        response.setData(jokes.getJoke());
+
+        return response;
+    }
 }
