@@ -12,6 +12,7 @@ android {
         versionName "1.0"
         // Enabling multidex support.
         multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -27,11 +28,17 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    // Added for AdMob
     compile project(':jokefactory')
     compile project(':jokeactivity')
-    //compile project(':jokesbackend')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.google.android.gms:play-services:8.4.0'
     compile project(path: ':jokesbackend', configuration: 'android-endpoints')
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    // espresso dependencies
+    androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    // Set this dependency if you want to use Hamcrest matching
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
 }
