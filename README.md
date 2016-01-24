@@ -14,6 +14,7 @@ Here are the technichal features:
 - The free flavor contains an Interstitial Ad that appears at the transition between the main acitivty and the joke display
 - When the user asks for a joke, the main activity displays a loading indicator until the AsyncTask is finished
 - Extra Gradle Task: The root gradle build contains a taks called runBackendEngineAndTest which launches the backend server, runs all connected tests, and shuts down the server
+
 ---
 # Original README:
 # Gradle for Android and Java Final Project
