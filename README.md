@@ -1,3 +1,21 @@
+# Build it Bigger
+Repository for Udacity Android Nanodegree project Build it Bigger.
+
+This app is a simple joke-telling app. It provides the user with a very simple interface of just a single button, which when clicked will call a new activity to display a joke. The jokes are part of a custom Java library. The retrieved jokes are displayed in an activity that is part of a custom Android library.
+
+Here are the technichal features:  
+
+- The jokes are part of the jokesfactory Java library
+- The jokes are displayed using an activity from the jokesactivity Android library
+- The application does not pull jokes straight from jokesfactory, instead, the jokesfactory is part of Google Cloud Endpoints server, and jokes are pulled from the server. The server implementation is in jokesbackend
+- The app queries the jokesbackend using an AyncTask
+- The code supports connected tests to test that the AsyncTask actually gets a joke
+- The app has a free and paid flavor
+- The free flavor contains an Interstitial Ad that appears at the transition between the main acitivty and the joke display
+- When the user asks for a joke, the main activity displays a loading indicator until the AsyncTask is finished
+- Extra Gradle Task: The root gradle build contains a taks called runBackendEngineAndTest which launches the backend server, runs all connected tests, and shuts down the server
+---
+# Original README:
 # Gradle for Android and Java Final Project
 
 In this project, you will create an app with multiple flavors that uses
@@ -14,7 +32,7 @@ behavior of the Gradle build tool, allowing automation of repetitive tasks.
 Particularly, factoring functionality into libraries and creating product
 flavors allow for much bigger projects with minimal added complexity.
 
-##What Will I Learn?
+## What Will I Learn?
 
 You will learn the role of Gradle in building Android Apps and how to use Gradle to manage apps of increasing complexity. You'll learn to:
 
@@ -25,7 +43,7 @@ You will learn the role of Gradle in building Android Apps and how to use Gradle
 * Use the Gradle App Engine plugin to deploy a backend
 * Configure an integration test suite that runs against the local App Engine development server
 
-##How Do I Complete this Project?
+## How Do I Complete this Project?
 
 ### Step 0: Starting Point
 
