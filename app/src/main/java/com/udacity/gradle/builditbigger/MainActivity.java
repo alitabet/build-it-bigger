@@ -51,6 +51,4 @@ public class MainActivity extends ActionBarActivity {
 //        intent.putExtra(JokeActivity.JOKE_KEY, joker.getJoke());
 //        startActivity(intent);
     }
-
-
 }
