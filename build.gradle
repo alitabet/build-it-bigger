@@ -17,3 +17,24 @@ allprojects {
         jcenter()
     }
 }
+
+// Custom task to launch GCE backend engine
+// and run all connected tests.
+task runBackendEngineAndTest (dependsOn: [":jokesbackend:appengineRun",
+                                      ":app:connectedAndroidTest",
+                                      ":jokesbackend:appengineStop"]) {
+    evaluationDependsOn ":jokesbackend"
+    project(":jokesbackend") {
+        appengine {
+            daemon true
+        }
+    }
+    doLast {
+        println "All done!"
+    }
+}
+
+// These dependencies will ensure that the tasks
+// are executed in the correct order
+tasks.getByPath(":app:connectedAndroidTest").mustRunAfter(":jokesbackend:appengineRun")
+tasks.getByPath(":jokesbackend:appengineStop").mustRunAfter(":app:connectedAndroidTest")
